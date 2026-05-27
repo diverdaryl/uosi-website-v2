@@ -3,666 +3,473 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Universal Outdoor Systems Inc. — Corporate Design</title>
+  <title>Universal Outdoor Systems Inc.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --navy:       #0B2545;
-      --navy2:      #163A6B;
-      --gold:       #B8963E;
-      --gold-light: #F5EDD6;
-      --white:      #FFFFFF;
-      --offwhite:   #F8F7F4;
-      --gray:       #6B7280;
-      --light:      #E8EDF4;
-      --border:     rgba(11, 37, 69, 0.1);
+      --navy:      #1B3578;
+      --navy2:     #0f2357;
+      --navy-dark: #0B1F4A;
+      --red:       #CC2936;
+      --yellow:    #FFD700;
+      --white:     #FFFFFF;
+      --offwhite:  #F8F7F4;
+      --gray:      #6B7280;
+      --lightblue: #EAF0FB;
+      --border:    rgba(27,53,120,0.1);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       background: var(--white);
-      color: var(--navy);
+      color: var(--navy-dark);
       font-family: 'DM Sans', sans-serif;
       overflow-x: hidden;
     }
 
-    /* ── NAV ────────────────────────────────── */
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
-      padding: 1.1rem 3rem;
+      padding: 0.85rem 3rem;
       display: flex; justify-content: space-between; align-items: center;
     }
 
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--navy);
-      letter-spacing: 0.04em;
-      text-decoration: none;
-    }
+    .nav-logo img { height: 46px; display: block; }
 
-    .logo span { color: var(--gold); }
-
-    .nav-links {
-      display: flex; gap: 2.2rem; list-style: none;
-    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
 
     .nav-links a {
-      color: rgba(11,37,69,0.55);
-      text-decoration: none;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 500;
-      transition: color 0.2s;
+      color: rgba(11,31,74,0.55); text-decoration: none;
+      font-size: 0.7rem; letter-spacing: 0.14em;
+      text-transform: uppercase; font-weight: 500; transition: color 0.2s;
     }
 
     .nav-links a:hover { color: var(--navy); }
 
     .nav-btn {
-      background: var(--navy);
-      color: var(--white);
-      border: none;
-      padding: 0.65rem 1.6rem;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.2s;
+      background: var(--red); color: var(--white); border: none;
+      padding: 0.65rem 1.5rem; font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; cursor: pointer; transition: background 0.2s;
     }
 
-    .nav-btn:hover { background: var(--navy2); }
+    .nav-btn:hover { background: #a81f2b; }
 
-    /* ── HERO ───────────────────────────────── */
+    /* HERO */
     .hero {
       background: var(--navy);
-      min-height: 100vh;
-      padding: 9rem 3rem 5rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
+      min-height: 100vh; padding: 9rem 3rem 5rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+      position: relative; overflow: hidden;
     }
 
     .hero::before {
-      content: '';
-      position: absolute; top: -100px; right: -100px;
-      width: 500px; height: 500px;
-      border-radius: 50%;
-      background: rgba(184,150,62,0.07);
-      pointer-events: none;
+      content: ''; position: absolute; top: -120px; right: -120px;
+      width: 550px; height: 550px; border-radius: 50%;
+      background: rgba(204,41,54,0.06); pointer-events: none;
     }
 
     .hero::after {
-      content: '';
-      position: absolute; bottom: -80px; left: 30%;
-      width: 360px; height: 360px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.025);
-      pointer-events: none;
+      content: ''; position: absolute; bottom: -80px; left: 25%;
+      width: 380px; height: 380px; border-radius: 50%;
+      background: rgba(255,215,0,0.04); pointer-events: none;
     }
 
-    .hero-eyebrow {
-      font-size: 0.68rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 1.2rem;
+    .hero-tags {
+      display: flex; gap: 1.2rem; align-items: center;
+      margin-bottom: 1.8rem; flex-wrap: wrap;
     }
+
+    .hero-tag {
+      font-size: 0.62rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--yellow); font-weight: 600;
+    }
+
+    .hero-sep { color: rgba(255,215,0,0.3); }
 
     .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 5.5vw, 5rem);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.08;
-      margin-bottom: 1.8rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 7vw, 7rem);
+      line-height: 0.9; letter-spacing: 0.02em;
+      color: transparent; -webkit-text-stroke: 2px var(--white);
+      margin-bottom: 0.5rem;
     }
 
-    .hero-title em { color: var(--gold); font-style: normal; }
+    .hero-title .solid { color: var(--yellow); -webkit-text-stroke: 0; }
+
+    .hero-sub {
+      font-size: 0.82rem; color: rgba(255,255,255,0.45);
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2rem;
+    }
 
     .hero-body {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.58);
-      line-height: 1.9;
-      margin-bottom: 2.5rem;
-      max-width: 440px;
+      font-size: 0.92rem; color: rgba(255,255,255,0.58);
+      line-height: 1.9; margin-bottom: 2.5rem; max-width: 420px;
     }
 
     .hero-actions { display: flex; gap: 1.2rem; flex-wrap: wrap; }
 
-    .btn-primary {
-      background: var(--gold);
-      color: var(--navy);
-      border: none;
-      padding: 1rem 2.2rem;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: opacity 0.2s;
-      text-decoration: none;
-      display: inline-block;
+    .btn-fill {
+      background: var(--yellow); color: var(--navy); border: none;
+      padding: 1rem 2.2rem; font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; cursor: pointer;
+      text-decoration: none; display: inline-block; transition: opacity 0.2s;
     }
 
-    .btn-primary:hover { opacity: 0.88; }
+    .btn-fill:hover { opacity: 0.88; }
 
-    .btn-secondary {
-      background: transparent;
-      color: var(--white);
-      border: 1px solid rgba(255,255,255,0.28);
-      padding: 1rem 2.2rem;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-decoration: none;
-      display: inline-block;
+    .btn-outline {
+      background: transparent; color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      padding: 1rem 2.2rem; font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; cursor: pointer;
+      text-decoration: none; display: inline-block; transition: all 0.2s;
     }
 
-    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
 
     .hero-right { position: relative; z-index: 2; }
 
     .hero-imgbox {
-      width: 100%;
-      aspect-ratio: 4/3;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(184,150,62,0.22);
+      width: 100%; aspect-ratio: 4/3;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,215,0,0.2);
       display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
     }
+
+    .hero-imgbox img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .hero-imgbox-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(184,150,62,0.35);
+      font-size: 0.7rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: rgba(255,215,0,0.3);
     }
 
+    .x-deco {
+      position: absolute; right: 0; bottom: 0;
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 0.8rem; padding: 1rem; pointer-events: none;
+    }
+
+    .x-sym { color: rgba(255,215,0,0.2); font-size: 0.85rem; }
+
     .hero-badge {
-      position: absolute;
-      bottom: -1.2rem; left: -1.2rem;
-      background: var(--gold);
-      padding: 1.4rem 1.8rem;
-      min-width: 140px;
-      z-index: 3;
+      position: absolute; bottom: -1.2rem; left: -1.2rem;
+      background: var(--red); padding: 1.4rem 1.8rem;
+      min-width: 140px; z-index: 3;
     }
 
     .hero-badge-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.6rem; color: var(--white); line-height: 1;
     }
 
     .hero-badge-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(11,37,69,0.68);
-      margin-top: 0.3rem;
+      font-size: 0.62rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.75); margin-top: 0.2rem;
     }
 
-    /* ── SECTION LABELS ─────────────────────── */
+    /* SECTION COMMONS */
     .section-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 0.8rem;
+      font-size: 0.65rem; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--red);
+      font-weight: 600; margin-bottom: 0.7rem;
     }
 
     .section-heading {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.12;
-      margin-bottom: 1.2rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 0.92; color: var(--navy); margin-bottom: 1.2rem;
     }
 
-    .section-body {
-      font-size: 0.9rem;
-      color: var(--gray);
-      line-height: 1.9;
-    }
+    .section-body { font-size: 0.9rem; color: var(--gray); line-height: 1.9; }
 
-    /* ── ABOUT ──────────────────────────────── */
+    /* ABOUT */
     .about {
-      background: var(--offwhite);
-      padding: 7rem 3rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
+      background: var(--offwhite); padding: 7rem 3rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
     }
 
     .stat-row {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.2rem;
-      margin-top: 2.5rem;
+      display: grid; grid-template-columns: repeat(2,1fr);
+      gap: 1.2rem; margin-top: 2.5rem;
     }
 
-    .stat { border-left: 3px solid var(--gold); padding-left: 1.1rem; }
+    .stat { border-left: 3px solid var(--red); padding-left: 1rem; }
 
     .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: var(--navy);
-      font-weight: 700;
-      line-height: 1;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem; color: var(--navy); line-height: 1;
     }
 
     .stat-label {
-      font-size: 0.68rem;
-      color: var(--gray);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-top: 0.3rem;
+      font-size: 0.68rem; color: var(--gray);
+      letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.2rem;
     }
 
     .about-imgbox {
-      width: 100%;
-      aspect-ratio: 4/3;
-      background: var(--light);
-      border: 1px solid rgba(11,37,69,0.08);
+      width: 100%; aspect-ratio: 4/3;
+      background: var(--lightblue);
+      border: 1px solid rgba(27,53,120,0.08);
       display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
     }
+
+    .about-imgbox img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .about-img-ph {
-      font-size: 0.72rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(11,37,69,0.22);
+      font-size: 0.7rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: rgba(27,53,120,0.22);
     }
 
-    /* ── SERVICES ───────────────────────────── */
-    .services { background: var(--white); padding: 7rem 3rem; }
-
-    .services-top {
-      margin-bottom: 3.5rem;
+    /* SERVICES */
+    .services {
+      background: var(--white); padding: 7rem 3rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: start;
     }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-      background: rgba(11,37,69,0.08);
+    .svc-list { display: flex; flex-direction: column; }
+
+    .svc-item {
+      display: flex; align-items: center; gap: 1.3rem;
+      padding: 1.3rem 0;
+      border-bottom: 1px solid rgba(27,53,120,0.08);
+      transition: gap 0.2s; cursor: default;
     }
 
-    .svc-card {
-      background: var(--white);
-      padding: 2.2rem 2rem;
-      transition: background 0.25s;
-      cursor: default;
-    }
+    .svc-item:last-child { border-bottom: none; }
+    .svc-item:hover { gap: 1.8rem; }
 
-    .svc-card:hover { background: var(--navy); }
-
-    .svc-icon {
-      width: 36px; height: 36px;
-      margin-bottom: 1.3rem;
-      color: var(--gold);
-    }
+    .sp { width: 32px; height: 32px; flex-shrink: 0; color: var(--red); }
 
     .svc-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 0.7rem;
-      line-height: 1.3;
-      transition: color 0.25s;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem; letter-spacing: 0.05em;
+      color: var(--navy); transition: color 0.2s;
     }
 
-    .svc-card:hover .svc-name { color: var(--white); }
+    .svc-item:hover .svc-name { color: var(--red); }
 
-    .svc-desc {
-      font-size: 0.8rem;
-      color: var(--gray);
-      line-height: 1.8;
-      transition: color 0.25s;
-    }
-
-    .svc-card:hover .svc-desc { color: rgba(255,255,255,0.55); }
-
-    /* ── COVERAGE ───────────────────────────── */
-    .coverage {
-      background: var(--navy);
-      padding: 7rem 3rem;
-    }
+    /* COVERAGE */
+    .coverage { background: var(--navy-dark); padding: 7rem 3rem; }
 
     .coverage .section-heading { color: var(--white); }
+    .coverage .section-label { color: var(--yellow); }
 
     .coverage-intro {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.52);
-      line-height: 1.9;
-      margin-bottom: 3.5rem;
-      max-width: 520px;
+      font-size: 0.9rem; color: rgba(255,255,255,0.52);
+      line-height: 1.9; margin-bottom: 3.5rem; max-width: 520px;
     }
 
     .coverage-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem;
     }
 
     .cov-card {
-      border: 1px solid rgba(184,150,62,0.2);
-      padding: 2.2rem 1.8rem;
-      transition: border-color 0.2s;
+      border: 1px solid rgba(255,215,0,0.15);
+      padding: 2.2rem 1.8rem; transition: border-color 0.2s;
     }
 
-    .cov-card:hover { border-color: rgba(184,150,62,0.5); }
+    .cov-card:hover { border-color: rgba(255,215,0,0.45); }
 
     .cov-region {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      color: var(--gold);
-      margin-bottom: 0.9rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem; color: var(--yellow); margin-bottom: 0.8rem;
     }
 
-    .cov-desc {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.8;
-    }
+    .cov-desc { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.8; }
 
-    /* ── CLIENTS ────────────────────────────── */
+    /* CLIENTS */
     .clients { background: var(--offwhite); padding: 7rem 3rem; }
 
     .clients-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      border: 1px solid rgba(11,37,69,0.08);
-      margin-top: 3rem;
+      display: grid; grid-template-columns: repeat(6,1fr);
+      border: 1px solid rgba(27,53,120,0.08); margin-top: 3rem;
     }
 
     .client-cell {
-      border: 1px solid rgba(11,37,69,0.06);
-      padding: 1.3rem 0.6rem;
+      border: 1px solid rgba(27,53,120,0.06);
+      padding: 1.2rem 0.5rem;
       display: flex; align-items: center; justify-content: center;
-      font-size: 0.64rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(11,37,69,0.38);
-      text-align: center;
-      min-height: 72px;
-      transition: all 0.2s;
+      font-size: 0.62rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: rgba(11,31,74,0.38);
+      text-align: center; min-height: 68px; transition: all 0.2s;
     }
 
     .client-cell:hover { color: var(--navy); background: var(--white); }
 
     .clients-note {
-      margin-top: 1.5rem;
-      font-size: 0.72rem;
-      color: rgba(11,37,69,0.28);
-      letter-spacing: 0.08em;
+      margin-top: 1.5rem; font-size: 0.72rem;
+      color: rgba(11,31,74,0.28); letter-spacing: 0.08em;
     }
 
-    /* ── AWARDS ─────────────────────────────── */
-    .awards {
-      background: var(--gold-light);
-      padding: 7rem 3rem;
-    }
+    /* AWARDS */
+    .awards { background: var(--yellow); padding: 7rem 3rem; }
 
     .awards .section-heading { color: var(--navy); }
+    .awards .section-label { color: var(--red); }
 
     .awards-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 3.5rem;
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 2rem; margin-top: 3.5rem;
     }
 
     .award-card {
-      background: var(--white);
-      padding: 2.2rem;
-      border-top: 3px solid var(--gold);
+      background: var(--white); padding: 2.2rem;
+      border-top: 3px solid var(--red);
     }
 
     .award-icon {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 1.1rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem; color: var(--red); margin-bottom: 1rem;
     }
 
-    .award-body {
-      font-size: 0.82rem;
-      color: var(--gray);
-      line-height: 1.8;
-      margin-bottom: 1.3rem;
-    }
+    .award-body { font-size: 0.82rem; color: var(--gray); line-height: 1.8; margin-bottom: 1.2rem; }
 
     .award-meta {
-      font-size: 0.68rem;
-      font-weight: 600;
-      color: var(--navy);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      line-height: 1.6;
+      font-size: 0.68rem; font-weight: 600; color: var(--navy);
+      letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.6;
     }
 
-    /* ── MVV ────────────────────────────────── */
+    /* MVV */
     .mvv {
-      background: var(--white);
-      padding: 7rem 3rem;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+      background: var(--navy); padding: 7rem 3rem;
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem;
     }
 
-    .mvv-card { background: var(--offwhite); padding: 2.5rem 2rem; }
+    .mvv-card {
+      border: 1px solid rgba(255,215,0,0.15);
+      padding: 2.5rem 2rem; transition: border-color 0.2s;
+    }
+
+    .mvv-card:hover { border-color: rgba(255,215,0,0.4); }
 
     .mvv-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 0.7rem;
+      font-size: 0.65rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--yellow);
+      font-weight: 600; margin-bottom: 0.7rem;
     }
 
     .mvv-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      color: var(--navy);
-      font-weight: 700;
-      margin-bottom: 1.1rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem; color: var(--white); margin-bottom: 1rem;
     }
 
-    .mvv-text {
-      font-size: 0.82rem;
-      color: var(--gray);
-      line-height: 1.9;
-    }
+    .mvv-text { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.9; }
 
     .mvv-value-title {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--navy);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      display: block;
-      margin: 1rem 0 0.3rem;
+      font-size: 0.7rem; font-weight: 600; color: var(--yellow);
+      letter-spacing: 0.1em; text-transform: uppercase;
+      display: block; margin: 1rem 0 0.3rem;
     }
 
-    .mvv-value-title:first-child { margin-top: 0; }
-
-    /* ── CONTACT ────────────────────────────── */
-    .contact {
-      background: var(--navy);
-      padding: 7rem 3rem 5rem;
-    }
-
-    .contact .section-heading { color: var(--white); margin-bottom: 0.5rem; }
-
-    .contact-sub {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 4rem;
-    }
+    /* CONTACT */
+    .contact { background: var(--white); padding: 7rem 3rem 5rem; }
 
     .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; margin-top: 3.5rem;
     }
 
     .cblock { margin-bottom: 2.2rem; }
 
     .clabel {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 0.5rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem; color: var(--navy);
+      letter-spacing: 0.1em; margin-bottom: 0.4rem;
     }
 
-    .cval {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.58);
-      line-height: 1.9;
-    }
+    .cval { font-size: 0.88rem; color: var(--gray); line-height: 1.9; }
 
-    .cf-field { margin-bottom: 1.3rem; }
+    .cf-field { margin-bottom: 1.2rem; }
 
     .cf-field label {
-      display: block;
-      font-size: 0.64rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.38);
-      margin-bottom: 0.5rem;
+      display: block; font-size: 0.64rem;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(11,31,74,0.45); margin-bottom: 0.45rem;
     }
 
     .cf-field input,
     .cf-field textarea {
-      width: 100%;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 0.85rem 1rem;
-      color: var(--white);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.88rem;
-      outline: none;
-      transition: border-color 0.2s;
-      resize: none;
+      width: 100%; background: var(--offwhite);
+      border: 1px solid rgba(27,53,120,0.15);
+      padding: 0.85rem 1rem; color: var(--navy-dark);
+      font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+      outline: none; transition: border-color 0.2s; resize: none;
     }
 
     .cf-field input:focus,
-    .cf-field textarea:focus { border-color: var(--gold); }
+    .cf-field textarea:focus { border-color: var(--red); }
 
     .cf-field input::placeholder,
-    .cf-field textarea::placeholder { color: rgba(255,255,255,0.18); }
+    .cf-field textarea::placeholder { color: rgba(11,31,74,0.25); }
 
     .cf-submit {
-      background: var(--gold);
-      color: var(--navy);
-      border: none;
-      padding: 1rem 2.2rem;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 0.5rem;
-      transition: opacity 0.2s;
+      background: var(--red); color: var(--white); border: none;
+      padding: 1rem 2.2rem; font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; cursor: pointer; width: 100%;
+      margin-top: 0.5rem; transition: background 0.2s;
     }
 
-    .cf-submit:hover { opacity: 0.88; }
+    .cf-submit:hover { background: #a81f2b; }
 
-    /* ── FOOTER ─────────────────────────────── */
+    /* FOOTER */
     footer {
-      background: #071b36;
-      border-top: 1px solid rgba(184,150,62,0.18);
+      background: var(--navy-dark);
+      border-top: 3px solid var(--red);
       padding: 2rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 1rem;
     }
 
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--white);
-    }
+    .footer-logo img { height: 38px; display: block; }
 
-    .footer-logo span { color: var(--gold); }
-
-    .footer-links {
-      display: flex; gap: 2rem; list-style: none;
-    }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
 
     .footer-links a {
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-      text-decoration: none;
-      transition: color 0.2s;
+      font-size: 0.68rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.35);
+      text-decoration: none; transition: color 0.2s;
     }
 
-    .footer-links a:hover { color: var(--gold); }
+    .footer-links a:hover { color: var(--yellow); }
 
-    .footer-copy {
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.2);
-      letter-spacing: 0.06em;
-    }
+    .footer-copy { font-size: 0.65rem; color: rgba(255,255,255,0.22); letter-spacing: 0.06em; }
 
-    /* ── RESPONSIVE ─────────────────────────── */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
+      nav { padding: 0.85rem 1.5rem; }
       .nav-links { display: none; }
 
-      .hero { padding: 8rem 1.5rem 4rem; grid-template-columns: 1fr; min-height: auto; gap: 3rem; }
-      .hero-title { font-size: clamp(2.8rem, 10vw, 5rem); }
+      .hero { padding: 8rem 1.5rem 4rem; grid-template-columns: 1fr; gap: 3rem; min-height: auto; }
+      .hero-title { font-size: clamp(3rem, 12vw, 6rem); }
       .hero-right { padding-bottom: 1.5rem; }
       .hero-badge { bottom: 0; left: 0; }
 
       .about { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2.5rem; }
       .stat-row { grid-template-columns: 1fr 1fr; }
 
-      .services { padding: 4rem 1.5rem; }
-      .services-grid { grid-template-columns: 1fr; }
+      .services { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2.5rem; }
 
       .coverage { padding: 4rem 1.5rem; }
       .coverage-grid { grid-template-columns: 1fr; }
 
       .clients { padding: 4rem 1.5rem; }
-      .clients-grid { grid-template-columns: repeat(3, 1fr); }
+      .clients-grid { grid-template-columns: repeat(3,1fr); }
 
       .awards { padding: 4rem 1.5rem; }
       .awards-grid { grid-template-columns: 1fr; }
@@ -681,7 +488,9 @@
 
   <!-- NAV -->
   <nav>
-    <a class="logo" href="#">UOSI<span>.</span></a>
+    <a class="nav-logo" href="#">
+      <img src="logo.png" alt="Universal Outdoor Systems Inc." />
+    </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
@@ -695,17 +504,31 @@
   <!-- HERO -->
   <section class="hero">
     <div>
-      <div class="hero-eyebrow">Outdoor Advertising &nbsp;·&nbsp; Est. 2001</div>
-      <div class="hero-title">Making Brands <em>Rule</em> the Market</div>
-      <p class="hero-body">Universal Outdoor Systems Inc. delivers high-impact outdoor advertising solutions across Luzon, Visayas, and Mindanao — helping local and multinational brands dominate the Philippine market.</p>
+      <div class="hero-tags">
+        <span class="hero-tag">Billboards</span><span class="hero-sep">|</span>
+        <span class="hero-tag">Digital LED</span><span class="hero-sep">|</span>
+        <span class="hero-tag">Transit Ads</span><span class="hero-sep">|</span>
+        <span class="hero-tag">Nationwide</span>
+      </div>
+      <div class="hero-title">
+        UNIVERSAL<br>
+        <span class="solid">OUTDOOR</span><br>
+        SYSTEMS
+      </div>
+      <p class="hero-sub">Incorporated &nbsp;·&nbsp; Est. 2001</p>
+      <p class="hero-body">Full-service outdoor advertising across Luzon, Visayas, and Mindanao — helping local and multinational brands dominate the Philippine market.</p>
       <div class="hero-actions">
-        <a class="btn-primary" href="#contact">Get a Proposal</a>
-        <a class="btn-secondary" href="#services">Our Services</a>
+        <a class="btn-fill" href="#contact">Get a Proposal</a>
+        <a class="btn-outline" href="#services">Our Services</a>
       </div>
     </div>
     <div class="hero-right">
       <div class="hero-imgbox">
         <span class="hero-imgbox-label">[ Hero Photo Here ]</span>
+        <div class="x-deco">
+          <span class="x-sym">✕</span><span class="x-sym">✕</span><span class="x-sym">✕</span><span class="x-sym">✕</span>
+          <span class="x-sym">✕</span><span class="x-sym">✕</span><span class="x-sym">✕</span><span class="x-sym">✕</span>
+        </div>
       </div>
       <div class="hero-badge">
         <div class="hero-badge-num">20+</div>
@@ -721,121 +544,56 @@
       <div class="section-heading">A Legacy of Outdoor Excellence</div>
       <p class="section-body">Founded in 2001, UOSI has grown into one of the Philippines' most trusted outdoor advertising companies. Our nationwide footprint, award-winning service, and roster of world-class clients speak for themselves.</p>
       <div class="stat-row">
-        <div class="stat">
-          <div class="stat-num">20+</div>
-          <div class="stat-label">Years Operating</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">36+</div>
-          <div class="stat-label">Major Clients</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">3</div>
-          <div class="stat-label">Island Groups</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">4</div>
-          <div class="stat-label">National Awards</div>
-        </div>
+        <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Years Operating</div></div>
+        <div class="stat"><div class="stat-num">36+</div><div class="stat-label">Major Clients</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Island Groups</div></div>
+        <div class="stat"><div class="stat-num">4</div><div class="stat-label">National Awards</div></div>
       </div>
     </div>
     <div class="about-imgbox">
-      <span class="about-img-ph">[ Company Photo ]</span>
+      <span class="about-img-ph">[ Company Photo Here ]</span>
     </div>
   </section>
 
   <!-- SERVICES -->
   <section class="services" id="services">
-    <div class="services-top">
+    <div>
       <div class="section-label">What We Do</div>
-      <div class="section-heading">Full-Service Outdoor Solutions</div>
-      <p class="section-body" style="max-width:520px;margin-top:0.8rem;">From traditional static billboards to cutting-edge Digital LED signage, we provide end-to-end outdoor advertising across the Philippines.</p>
+      <div class="section-heading">FULL-SERVICE<br>OUTDOOR<br>SOLUTIONS</div>
+      <p class="section-body">From traditional static billboards to cutting-edge Digital LED signage, we provide end-to-end outdoor advertising solutions that put your brand in front of the right audience — everywhere across the Philippines.</p>
     </div>
-    <div class="services-grid">
-      <div class="svc-card">
-        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
-          <rect x="3" y="4" width="30" height="18" rx="1" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="15" y1="22" x2="15" y2="32" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="21" y1="22" x2="21" y2="32" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="9" y1="32" x2="27" y2="32" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <div class="svc-name">Static Billboards</div>
-        <p class="svc-desc">Large-format, high-visibility billboard placements along major thoroughfares and expressways nationwide.</p>
+    <div class="svc-list">
+      <div class="svc-item">
+        <svg class="sp" viewBox="0 0 32 32" fill="none"><path d="M16 2L18.5 13.5L30 16L18.5 18.5L16 30L13.5 18.5L2 16L13.5 13.5L16 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span class="svc-name">Static Billboards</span>
       </div>
-      <div class="svc-card">
-        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
-          <rect x="3" y="4" width="30" height="18" rx="1" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="18" cy="13" r="4" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="15" y1="22" x2="15" y2="32" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="21" y1="22" x2="21" y2="32" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="9" y1="32" x2="27" y2="32" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <div class="svc-name">Digital LED Billboards</div>
-        <p class="svc-desc">Dynamic full-motion digital displays delivering maximum audience engagement day and night.</p>
+      <div class="svc-item">
+        <svg class="sp" viewBox="0 0 32 32" fill="none"><path d="M16 2L18.5 13.5L30 16L18.5 18.5L16 30L13.5 18.5L2 16L13.5 13.5L16 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span class="svc-name">Digital LED Billboards</span>
       </div>
-      <div class="svc-card">
-        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
-          <rect x="2" y="10" width="32" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="6" cy="18" r="2" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="30" cy="18" r="2" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="10" y1="18" x2="26" y2="18" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/>
-        </svg>
-        <div class="svc-name">Transit Advertising</div>
-        <p class="svc-desc">Bus, jeepney, and rail advertising that moves your brand message throughout the city.</p>
+      <div class="svc-item">
+        <svg class="sp" viewBox="0 0 32 32" fill="none"><path d="M16 2L18.5 13.5L30 16L18.5 18.5L16 30L13.5 18.5L2 16L13.5 13.5L16 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span class="svc-name">Transit Advertising</span>
       </div>
-      <div class="svc-card">
-        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
-          <path d="M4 28 L18 6 L32 28 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-          <line x1="18" y1="28" x2="18" y2="34" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="10" y1="34" x2="26" y2="34" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <div class="svc-name">Streamers & Lamp Posts</div>
-        <p class="svc-desc">Street-level streamer and lamp post banners that build brand presence along key roads.</p>
+      <div class="svc-item">
+        <svg class="sp" viewBox="0 0 32 32" fill="none"><path d="M16 2L18.5 13.5L30 16L18.5 18.5L16 30L13.5 18.5L2 16L13.5 13.5L16 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span class="svc-name">Airport & Terminal Ads</span>
       </div>
-      <div class="svc-card">
-        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
-          <rect x="4" y="8" width="28" height="20" rx="1" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M4 16h28" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M12 8v8M24 8v8" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <div class="svc-name">Airport & Terminal Ads</div>
-        <p class="svc-desc">Captive-audience placements in airports, bus terminals, and major transport hubs.</p>
+      <div class="svc-item">
+        <svg class="sp" viewBox="0 0 32 32" fill="none"><path d="M16 2L18.5 13.5L30 16L18.5 18.5L16 30L13.5 18.5L2 16L13.5 13.5L16 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span class="svc-name">Mall & Retail Displays</span>
       </div>
-      <div class="svc-card">
-        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
-          <rect x="3" y="5" width="30" height="22" rx="1" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M3 13h30M3 21h30M11 5v22M25 5v22" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"/>
-        </svg>
-        <div class="svc-name">Mall & Retail Displays</div>
-        <p class="svc-desc">Strategic in-mall and point-of-sale advertising at major commercial centers nationwide.</p>
+      <div class="svc-item">
+        <svg class="sp" viewBox="0 0 32 32" fill="none"><path d="M16 2L18.5 13.5L30 16L18.5 18.5L16 30L13.5 18.5L2 16L13.5 13.5L16 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span class="svc-name">Wallscapes & Building Wraps</span>
       </div>
-      <div class="svc-card">
-        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
-          <rect x="2" y="6" width="32" height="24" rx="1" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M2 14h32" stroke="currentColor" stroke-width="1.5"/>
-          <rect x="8" y="19" width="8" height="6" rx="0.5" stroke="currentColor" stroke-width="1"/>
-          <rect x="20" y="19" width="8" height="6" rx="0.5" stroke="currentColor" stroke-width="1"/>
-        </svg>
-        <div class="svc-name">Wallscapes & Building Wraps</div>
-        <p class="svc-desc">Large-format building wraps and wallscapes for dominant brand visibility in urban areas.</p>
+      <div class="svc-item">
+        <svg class="sp" viewBox="0 0 32 32" fill="none"><path d="M16 2L18.5 13.5L30 16L18.5 18.5L16 30L13.5 18.5L2 16L13.5 13.5L16 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span class="svc-name">Streamers & Lamp Posts</span>
       </div>
-      <div class="svc-card">
-        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
-          <rect x="2" y="12" width="32" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="9" cy="28" r="3" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="27" cy="28" r="3" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M8 12V9a2 2 0 012-2h16a2 2 0 012 2v3" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
-        <div class="svc-name">Mobile & Vehicle Ads</div>
-        <p class="svc-desc">Moving outdoor media on vehicles that extend your brand reach across multiple routes.</p>
-      </div>
-      <div class="svc-card">
-        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
-          <circle cx="18" cy="18" r="14" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M18 4v28M4 18h28M7 10c3 2 7 3 11 3s8-1 11-3M7 26c3-2 7-3 11-3s8 1 11 3" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"/>
-        </svg>
-        <div class="svc-name">Nationwide OOH Planning</div>
-        <p class="svc-desc">Strategic outdoor media planning and placement across all major Philippine regions.</p>
+      <div class="svc-item">
+        <svg class="sp" viewBox="0 0 32 32" fill="none"><path d="M16 2L18.5 13.5L30 16L18.5 18.5L16 30L13.5 18.5L2 16L13.5 13.5L16 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span class="svc-name">Mobile & Vehicle Ads</span>
       </div>
     </div>
   </section>
@@ -843,7 +601,7 @@
   <!-- COVERAGE -->
   <section class="coverage" id="coverage">
     <div class="section-label">Where We Operate</div>
-    <div class="section-heading">Nationwide Coverage</div>
+    <div class="section-heading">NATIONWIDE COVERAGE</div>
     <p class="coverage-intro">From the streets of Metro Manila to the growth corridors of Visayas and Mindanao, UOSI's presence stretches across every major region of the Philippines.</p>
     <div class="coverage-grid">
       <div class="cov-card">
@@ -864,7 +622,7 @@
   <!-- CLIENTS -->
   <section class="clients" id="clients">
     <div class="section-label">Trusted By</div>
-    <div class="section-heading">Our Clients</div>
+    <div class="section-heading">OUR CLIENTS</div>
     <div class="clients-grid">
       <div class="client-cell">Jollibee</div>
       <div class="client-cell">McDonald's</div>
@@ -897,7 +655,7 @@
   <!-- AWARDS -->
   <section class="awards" id="awards">
     <div class="section-label">Recognition</div>
-    <div class="section-heading">Award-Winning Excellence</div>
+    <div class="section-heading">COMPANY AWARDS</div>
     <div class="awards-grid">
       <div class="award-card">
         <div class="award-icon">★</div>
@@ -946,8 +704,7 @@
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="section-label">Get in Touch</div>
-    <div class="section-heading">Request a Proposal</div>
-    <p class="contact-sub">Let's discuss how UOSI can put your brand in front of the right audience.</p>
+    <div class="section-heading">REQUEST A PROPOSAL</div>
     <div class="contact-grid">
       <div>
         <div class="cblock">
@@ -964,7 +721,7 @@
         </div>
         <div class="cblock">
           <div class="clabel">Office Hours</div>
-          <div class="cval">Monday – Friday<br>9:00 AM – 6:00 PM</div>
+          <div class="cval">Monday – Friday · 9:00 AM – 6:00 PM</div>
         </div>
       </div>
       <div>
@@ -991,7 +748,9 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">Universal Outdoor Systems Inc<span>.</span></div>
+    <div class="footer-logo">
+      <img src="logo.png" alt="Universal Outdoor Systems Inc." />
+    </div>
     <ul class="footer-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
