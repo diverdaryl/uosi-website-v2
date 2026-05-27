@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Universal Outdoor Systems Inc. — Corporate Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy:       #0B2545;
+      --navy2:      #163A6B;
+      --gold:       #B8963E;
+      --gold-light: #F5EDD6;
+      --white:      #FFFFFF;
+      --offwhite:   #F8F7F4;
+      --gray:       #6B7280;
+      --light:      #E8EDF4;
+      --border:     rgba(11, 37, 69, 0.1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--navy);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 1.1rem 3rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex; gap: 2.2rem; list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(11,37,69,0.55);
+      text-decoration: none;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    .nav-btn {
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      padding: 0.65rem 1.6rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .nav-btn:hover { background: var(--navy2); }
+
+    /* ── HERO ───────────────────────────────── */
+    .hero {
+      background: var(--navy);
+      min-height: 100vh;
+      padding: 9rem 3rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: rgba(184,150,62,0.07);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -80px; left: 30%;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.025);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-title em { color: var(--gold); font-style: normal; }
+
+    .hero-body {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.9;
+      margin-bottom: 2.5rem;
+      max-width: 440px;
+    }
+
+    .hero-actions { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      padding: 1rem 2.2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { opacity: 0.88; }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.28);
+      padding: 1rem 2.2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-right { position: relative; z-index: 2; }
+
+    .hero-imgbox {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(184,150,62,0.22);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .hero-imgbox-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(184,150,62,0.35);
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: -1.2rem; left: -1.2rem;
+      background: var(--gold);
+      padding: 1.4rem 1.8rem;
+      min-width: 140px;
+      z-index: 3;
+    }
+
+    .hero-badge-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .hero-badge-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(11,37,69,0.68);
+      margin-top: 0.3rem;
+    }
+
+    /* ── SECTION LABELS ─────────────────────── */
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.12;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-body {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.9;
+    }
+
+    /* ── ABOUT ──────────────────────────────── */
+    .about {
+      background: var(--offwhite);
+      padding: 7rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+
+    .stat { border-left: 3px solid var(--gold); padding-left: 1.1rem; }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--navy);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.68rem;
+      color: var(--gray);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.3rem;
+    }
+
+    .about-imgbox {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: var(--light);
+      border: 1px solid rgba(11,37,69,0.08);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .about-img-ph {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(11,37,69,0.22);
+    }
+
+    /* ── SERVICES ───────────────────────────── */
+    .services { background: var(--white); padding: 7rem 3rem; }
+
+    .services-top {
+      margin-bottom: 3.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: rgba(11,37,69,0.08);
+    }
+
+    .svc-card {
+      background: var(--white);
+      padding: 2.2rem 2rem;
+      transition: background 0.25s;
+      cursor: default;
+    }
+
+    .svc-card:hover { background: var(--navy); }
+
+    .svc-icon {
+      width: 36px; height: 36px;
+      margin-bottom: 1.3rem;
+      color: var(--gold);
+    }
+
+    .svc-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.7rem;
+      line-height: 1.3;
+      transition: color 0.25s;
+    }
+
+    .svc-card:hover .svc-name { color: var(--white); }
+
+    .svc-desc {
+      font-size: 0.8rem;
+      color: var(--gray);
+      line-height: 1.8;
+      transition: color 0.25s;
+    }
+
+    .svc-card:hover .svc-desc { color: rgba(255,255,255,0.55); }
+
+    /* ── COVERAGE ───────────────────────────── */
+    .coverage {
+      background: var(--navy);
+      padding: 7rem 3rem;
+    }
+
+    .coverage .section-heading { color: var(--white); }
+
+    .coverage-intro {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.52);
+      line-height: 1.9;
+      margin-bottom: 3.5rem;
+      max-width: 520px;
+    }
+
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .cov-card {
+      border: 1px solid rgba(184,150,62,0.2);
+      padding: 2.2rem 1.8rem;
+      transition: border-color 0.2s;
+    }
+
+    .cov-card:hover { border-color: rgba(184,150,62,0.5); }
+
+    .cov-region {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--gold);
+      margin-bottom: 0.9rem;
+    }
+
+    .cov-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+    }
+
+    /* ── CLIENTS ────────────────────────────── */
+    .clients { background: var(--offwhite); padding: 7rem 3rem; }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      border: 1px solid rgba(11,37,69,0.08);
+      margin-top: 3rem;
+    }
+
+    .client-cell {
+      border: 1px solid rgba(11,37,69,0.06);
+      padding: 1.3rem 0.6rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.64rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(11,37,69,0.38);
+      text-align: center;
+      min-height: 72px;
+      transition: all 0.2s;
+    }
+
+    .client-cell:hover { color: var(--navy); background: var(--white); }
+
+    .clients-note {
+      margin-top: 1.5rem;
+      font-size: 0.72rem;
+      color: rgba(11,37,69,0.28);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── AWARDS ─────────────────────────────── */
+    .awards {
+      background: var(--gold-light);
+      padding: 7rem 3rem;
+    }
+
+    .awards .section-heading { color: var(--navy); }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .award-card {
+      background: var(--white);
+      padding: 2.2rem;
+      border-top: 3px solid var(--gold);
+    }
+
+    .award-icon {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 1.1rem;
+    }
+
+    .award-body {
+      font-size: 0.82rem;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 1.3rem;
+    }
+
+    .award-meta {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.6;
+    }
+
+    /* ── MVV ────────────────────────────────── */
+    .mvv {
+      background: var(--white);
+      padding: 7rem 3rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .mvv-card { background: var(--offwhite); padding: 2.5rem 2rem; }
+
+    .mvv-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+
+    .mvv-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 1.1rem;
+    }
+
+    .mvv-text {
+      font-size: 0.82rem;
+      color: var(--gray);
+      line-height: 1.9;
+    }
+
+    .mvv-value-title {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin: 1rem 0 0.3rem;
+    }
+
+    .mvv-value-title:first-child { margin-top: 0; }
+
+    /* ── CONTACT ────────────────────────────── */
+    .contact {
+      background: var(--navy);
+      padding: 7rem 3rem 5rem;
+    }
+
+    .contact .section-heading { color: var(--white); margin-bottom: 0.5rem; }
+
+    .contact-sub {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 4rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+
+    .cblock { margin-bottom: 2.2rem; }
+
+    .clabel {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .cval {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.9;
+    }
+
+    .cf-field { margin-bottom: 1.3rem; }
+
+    .cf-field label {
+      display: block;
+      font-size: 0.64rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      margin-bottom: 0.5rem;
+    }
+
+    .cf-field input,
+    .cf-field textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 0.85rem 1rem;
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+
+    .cf-field input:focus,
+    .cf-field textarea:focus { border-color: var(--gold); }
+
+    .cf-field input::placeholder,
+    .cf-field textarea::placeholder { color: rgba(255,255,255,0.18); }
+
+    .cf-submit {
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      padding: 1rem 2.2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 0.5rem;
+      transition: opacity 0.2s;
+    }
+
+    .cf-submit:hover { opacity: 0.88; }
+
+    /* ── FOOTER ─────────────────────────────── */
+    footer {
+      background: #071b36;
+      border-top: 1px solid rgba(184,150,62,0.18);
+      padding: 2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    .footer-links {
+      display: flex; gap: 2rem; list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+
+      .hero { padding: 8rem 1.5rem 4rem; grid-template-columns: 1fr; min-height: auto; gap: 3rem; }
+      .hero-title { font-size: clamp(2.8rem, 10vw, 5rem); }
+      .hero-right { padding-bottom: 1.5rem; }
+      .hero-badge { bottom: 0; left: 0; }
+
+      .about { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2.5rem; }
+      .stat-row { grid-template-columns: 1fr 1fr; }
+
+      .services { padding: 4rem 1.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+
+      .coverage { padding: 4rem 1.5rem; }
+      .coverage-grid { grid-template-columns: 1fr; }
+
+      .clients { padding: 4rem 1.5rem; }
+      .clients-grid { grid-template-columns: repeat(3, 1fr); }
+
+      .awards { padding: 4rem 1.5rem; }
+      .awards-grid { grid-template-columns: 1fr; }
+
+      .mvv { grid-template-columns: 1fr; padding: 4rem 1.5rem; }
+
+      .contact { padding: 4rem 1.5rem 3rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+
+      footer { padding: 1.5rem; flex-direction: column; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="logo" href="#">UOSI<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#coverage">Coverage</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#awards">Awards</a></li>
+    </ul>
+    <button class="nav-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Proposal</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="hero-eyebrow">Outdoor Advertising &nbsp;·&nbsp; Est. 2001</div>
+      <div class="hero-title">Making Brands <em>Rule</em> the Market</div>
+      <p class="hero-body">Universal Outdoor Systems Inc. delivers high-impact outdoor advertising solutions across Luzon, Visayas, and Mindanao — helping local and multinational brands dominate the Philippine market.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#contact">Get a Proposal</a>
+        <a class="btn-secondary" href="#services">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-imgbox">
+        <span class="hero-imgbox-label">[ Hero Photo Here ]</span>
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-num">20+</div>
+        <div class="hero-badge-label">Years of Excellence</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div>
+      <div class="section-label">Who We Are</div>
+      <div class="section-heading">A Legacy of Outdoor Excellence</div>
+      <p class="section-body">Founded in 2001, UOSI has grown into one of the Philippines' most trusted outdoor advertising companies. Our nationwide footprint, award-winning service, and roster of world-class clients speak for themselves.</p>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-num">20+</div>
+          <div class="stat-label">Years Operating</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">36+</div>
+          <div class="stat-label">Major Clients</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Island Groups</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">4</div>
+          <div class="stat-label">National Awards</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-imgbox">
+      <span class="about-img-ph">[ Company Photo ]</span>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-top">
+      <div class="section-label">What We Do</div>
+      <div class="section-heading">Full-Service Outdoor Solutions</div>
+      <p class="section-body" style="max-width:520px;margin-top:0.8rem;">From traditional static billboards to cutting-edge Digital LED signage, we provide end-to-end outdoor advertising across the Philippines.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
+          <rect x="3" y="4" width="30" height="18" rx="1" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="15" y1="22" x2="15" y2="32" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="21" y1="22" x2="21" y2="32" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="9" y1="32" x2="27" y2="32" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <div class="svc-name">Static Billboards</div>
+        <p class="svc-desc">Large-format, high-visibility billboard placements along major thoroughfares and expressways nationwide.</p>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
+          <rect x="3" y="4" width="30" height="18" rx="1" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="18" cy="13" r="4" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="15" y1="22" x2="15" y2="32" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="21" y1="22" x2="21" y2="32" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="9" y1="32" x2="27" y2="32" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <div class="svc-name">Digital LED Billboards</div>
+        <p class="svc-desc">Dynamic full-motion digital displays delivering maximum audience engagement day and night.</p>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
+          <rect x="2" y="10" width="32" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="6" cy="18" r="2" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="30" cy="18" r="2" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="10" y1="18" x2="26" y2="18" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/>
+        </svg>
+        <div class="svc-name">Transit Advertising</div>
+        <p class="svc-desc">Bus, jeepney, and rail advertising that moves your brand message throughout the city.</p>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
+          <path d="M4 28 L18 6 L32 28 Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          <line x1="18" y1="28" x2="18" y2="34" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="10" y1="34" x2="26" y2="34" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <div class="svc-name">Streamers & Lamp Posts</div>
+        <p class="svc-desc">Street-level streamer and lamp post banners that build brand presence along key roads.</p>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
+          <rect x="4" y="8" width="28" height="20" rx="1" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M4 16h28" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12 8v8M24 8v8" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <div class="svc-name">Airport & Terminal Ads</div>
+        <p class="svc-desc">Captive-audience placements in airports, bus terminals, and major transport hubs.</p>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
+          <rect x="3" y="5" width="30" height="22" rx="1" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M3 13h30M3 21h30M11 5v22M25 5v22" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"/>
+        </svg>
+        <div class="svc-name">Mall & Retail Displays</div>
+        <p class="svc-desc">Strategic in-mall and point-of-sale advertising at major commercial centers nationwide.</p>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
+          <rect x="2" y="6" width="32" height="24" rx="1" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M2 14h32" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="8" y="19" width="8" height="6" rx="0.5" stroke="currentColor" stroke-width="1"/>
+          <rect x="20" y="19" width="8" height="6" rx="0.5" stroke="currentColor" stroke-width="1"/>
+        </svg>
+        <div class="svc-name">Wallscapes & Building Wraps</div>
+        <p class="svc-desc">Large-format building wraps and wallscapes for dominant brand visibility in urban areas.</p>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
+          <rect x="2" y="12" width="32" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="9" cy="28" r="3" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="27" cy="28" r="3" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 12V9a2 2 0 012-2h16a2 2 0 012 2v3" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <div class="svc-name">Mobile & Vehicle Ads</div>
+        <p class="svc-desc">Moving outdoor media on vehicles that extend your brand reach across multiple routes.</p>
+      </div>
+      <div class="svc-card">
+        <svg class="svc-icon" viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="18" r="14" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M18 4v28M4 18h28M7 10c3 2 7 3 11 3s8-1 11-3M7 26c3-2 7-3 11-3s8 1 11 3" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"/>
+        </svg>
+        <div class="svc-name">Nationwide OOH Planning</div>
+        <p class="svc-desc">Strategic outdoor media planning and placement across all major Philippine regions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE -->
+  <section class="coverage" id="coverage">
+    <div class="section-label">Where We Operate</div>
+    <div class="section-heading">Nationwide Coverage</div>
+    <p class="coverage-intro">From the streets of Metro Manila to the growth corridors of Visayas and Mindanao, UOSI's presence stretches across every major region of the Philippines.</p>
+    <div class="coverage-grid">
+      <div class="cov-card">
+        <div class="cov-region">Luzon</div>
+        <p class="cov-desc">National Capital Region and key cities across Luzon — including Metro Manila's major expressways, commercial strips, and high-footfall areas.</p>
+      </div>
+      <div class="cov-card">
+        <div class="cov-region">Visayas</div>
+        <p class="cov-desc">Strategic outdoor advertising locations across the Visayas region, reaching key urban centers and high-traffic corridors.</p>
+      </div>
+      <div class="cov-card">
+        <div class="cov-region">Mindanao</div>
+        <p class="cov-desc">Extensive presence in Mindanao's major cities, connecting brands with the island's rapidly growing consumer market.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section class="clients" id="clients">
+    <div class="section-label">Trusted By</div>
+    <div class="section-heading">Our Clients</div>
+    <div class="clients-grid">
+      <div class="client-cell">Jollibee</div>
+      <div class="client-cell">McDonald's</div>
+      <div class="client-cell">Unilever Phils.</div>
+      <div class="client-cell">Mastercard</div>
+      <div class="client-cell">Ayala Land</div>
+      <div class="client-cell">Pfizer</div>
+      <div class="client-cell">Panasonic</div>
+      <div class="client-cell">Bayer Phils.</div>
+      <div class="client-cell">Isuzu Phils.</div>
+      <div class="client-cell">Unilab</div>
+      <div class="client-cell">MTV Phils.</div>
+      <div class="client-cell">Eagle Cement</div>
+      <div class="client-cell">Fairy Skin</div>
+      <div class="client-cell">Happy Pet</div>
+      <div class="client-cell">Plains & Prints</div>
+      <div class="client-cell">Hangten</div>
+      <div class="client-cell">Kuya J</div>
+      <div class="client-cell">Innove Comms.</div>
+      <div class="client-cell">Bioessence</div>
+      <div class="client-cell">Comforser Tires</div>
+      <div class="client-cell">Radar Tires</div>
+      <div class="client-cell">Milk Magic</div>
+      <div class="client-cell">Orabella</div>
+      <div class="client-cell">+ many more</div>
+    </div>
+    <p class="clients-note">* Logo versions to be placed upon client approval</p>
+  </section>
+
+  <!-- AWARDS -->
+  <section class="awards" id="awards">
+    <div class="section-label">Recognition</div>
+    <div class="section-heading">Award-Winning Excellence</div>
+    <div class="awards-grid">
+      <div class="award-card">
+        <div class="award-icon">★</div>
+        <p class="award-body">Best Outdoor Advertising Company — National Product Quality Excellence Awards & Seal of Product Quality</p>
+        <div class="award-meta">February 22, 2006<br>Manila Pavilion Hotel</div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">★</div>
+        <p class="award-body">Best Outdoor Advertising Company — Golden Globe Annual Awards for Business Excellence</p>
+        <div class="award-meta">March 22, 2014<br>Manila Hotel</div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">★</div>
+        <p class="award-body">Most Outstanding Trusted Quality Outdoor Advertising Company — National Customers' Choice Annual Awards</p>
+        <div class="award-meta">2014 & 2015<br>Eastwood Richmonde Hotel</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MVV -->
+  <section class="mvv">
+    <div class="mvv-card">
+      <div class="mvv-label">Our Mission</div>
+      <div class="mvv-title">Why We Exist</div>
+      <p class="mvv-text">To provide effective, value-for-money outdoor advertising solutions that enable our clients to break through the clutter and succeed — leveraging our nationwide presence and unwavering dedication to business integrity.</p>
+    </div>
+    <div class="mvv-card">
+      <div class="mvv-label">Our Vision</div>
+      <div class="mvv-title">Where We're Going</div>
+      <p class="mvv-text">To be the leader in full-service outdoor advertising solutions in the Philippines — making grand ideas become reality as we enable brands to rule the market nationwide.</p>
+    </div>
+    <div class="mvv-card">
+      <div class="mvv-label">Core Values</div>
+      <div class="mvv-title">How We Work</div>
+      <p class="mvv-text">
+        <span class="mvv-value-title">Excellence with Integrity</span>
+        Decades-long reputation of honest management and superior quality in every campaign.
+        <span class="mvv-value-title">Clients Come First</span>
+        Maximizing your media presence to generate growth and measurable results.
+        <span class="mvv-value-title">Nationwide Reach</span>
+        From Luzon to Mindanao — promoting your brand's corporate prestige everywhere.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-label">Get in Touch</div>
+    <div class="section-heading">Request a Proposal</div>
+    <p class="contact-sub">Let's discuss how UOSI can put your brand in front of the right audience.</p>
+    <div class="contact-grid">
+      <div>
+        <div class="cblock">
+          <div class="clabel">Phone</div>
+          <div class="cval">(02) 8552-8128<br>0919 580 7983<br>0995 713 0333</div>
+        </div>
+        <div class="cblock">
+          <div class="clabel">Email</div>
+          <div class="cval">universalgjgats@gmail.com<br>gjguniversaloutdoor.gm@gmail.com</div>
+        </div>
+        <div class="cblock">
+          <div class="clabel">Office Address</div>
+          <div class="cval">237 Cityland Dela Rosa<br>Dela Rosa St., Pio Del Pilar<br>Makati City</div>
+        </div>
+        <div class="cblock">
+          <div class="clabel">Office Hours</div>
+          <div class="cval">Monday – Friday<br>9:00 AM – 6:00 PM</div>
+        </div>
+      </div>
+      <div>
+        <div class="cf-field">
+          <label for="f-name">Your Name</label>
+          <input type="text" id="f-name" placeholder="Juan dela Cruz" />
+        </div>
+        <div class="cf-field">
+          <label for="f-email">Email Address</label>
+          <input type="email" id="f-email" placeholder="you@company.com" />
+        </div>
+        <div class="cf-field">
+          <label for="f-company">Company</label>
+          <input type="text" id="f-company" placeholder="Your Company Inc." />
+        </div>
+        <div class="cf-field">
+          <label for="f-msg">Message</label>
+          <textarea id="f-msg" rows="4" placeholder="Tell us about your campaign..."></textarea>
+        </div>
+        <button class="cf-submit">Send Inquiry →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Universal Outdoor Systems Inc<span>.</span></div>
+    <ul class="footer-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://web.facebook.com/universaloutdoor" target="_blank">Facebook</a></li>
+    </ul>
+    <div class="footer-copy">© 2025 UOSI · All rights reserved</div>
+  </footer>
+
+</body>
+</html>
